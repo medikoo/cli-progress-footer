@@ -47,8 +47,9 @@ When opting out you may write regular log content via `cliProgressFooter.writeSt
 ##### redirectStderr `bool` _(default: true)_
 
 When progress footer is in play, all output should be treated as one `std` stream. If it's not the case then
-filtering `stderr` may show output as malformed. Therefore by default all `stderr` content is redirected to `stdout`.
-If you wish to redirect `stderr` somewhere else with cli means, then it's best turn this function off (in such cases `proces.stderr.write` will not be affected)
+any `stderr` output may break visible log output. Therefore by default all `stderr` content is redirected to `stdout`.
+
+If you wish to redirect `stderr` somewhere else with cli means, then it's best turn this function off (so `proces.stderr.write` is not overriden)
 
 ### Tests
 

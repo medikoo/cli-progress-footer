@@ -27,7 +27,7 @@ class CliProgressFooter {
 		if (!isObject(options)) options = defaultOptions;
 		if (options.overrideStdout && !this._isStdoutOverriden) {
 			this._stdoutData = overrideStdoutWrite(data => this._repaint(data));
-			this._writeOriginalStdout = this._stdoutData.superStdoutWrite;
+			this._writeOriginalStdout = this._stdoutData.originalStdoutWrite;
 			this._isStdoutOverriden = true;
 		}
 		if (options.redirectStderr && !this._isStderrRedirected) {

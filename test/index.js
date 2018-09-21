@@ -72,6 +72,30 @@ test("cliProgressFooter", t => {
 		[1, 3].map(item => `# item ${ item }`).join("\n")
 	}\n`;
 
+	cliProgressFooter.updateProgress(
+		`${ [1, 3, 4, 5].map(item => `# item ${ item }`).join("\n") }`
+	);
+	expectedOut += `${ repeat.call(`${ cliErase.line }${ cliMove.lines(-1) }`, 3) }\n${
+		[1, 3, 4, 5].map(item => `# item ${ item }`).join("\n")
+	}\n`;
+
+	cliProgressFooter.updateProgress(`${ [1, 3].map(item => `# item ${ item }`).join("\n") }`);
+	expectedOut += `${ repeat.call(`${ cliErase.line }${ cliMove.lines(-1) }`, 5) }\n${
+		[1, 3].map(item => `# item ${ item }`).join("\n")
+	}\n`;
+
+	cliProgressFooter.updateProgress(
+		`${ [1, 3, 4, 5].map(item => `# item ${ item }`).join("\n") }`
+	);
+	expectedOut += `${ cliMove.bottom }${
+		repeat.call(`${ cliErase.line }${ cliMove.lines(-1) }`, 5)
+	}\n${ [1, 3, 4, 5].map(item => `# item ${ item }`).join("\n") }\n`;
+
+	cliProgressFooter.updateProgress(`${ [1, 3].map(item => `# item ${ item }`).join("\n") }`);
+	expectedOut += `${ repeat.call(`${ cliErase.line }${ cliMove.lines(-1) }`, 5) }\n${
+		[1, 3].map(item => `# item ${ item }`).join("\n")
+	}\n`;
+
 	t.equal(exposeAnsi(out), exposeAnsi(expectedOut));
 	t.end();
 });

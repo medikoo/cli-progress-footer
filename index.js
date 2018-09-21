@@ -47,9 +47,9 @@ class CliProgressFooter {
 		}
 	}
 	updateProgress(data) {
-		this._progressContent = ensureString(data);
+		this._progressContent = `${ ensureString(data) }\n`;
 		this._repaint();
-		const newProgressLinesCount = count.call(data, "\n") + 1;
+		const newProgressLinesCount = count.call(this._progressContent, "\n") + 1;
 		if (newProgressLinesCount < this._progressLinesCount) {
 			this._progressOverflowLinesCount += this._progressLinesCount - newProgressLinesCount;
 		}

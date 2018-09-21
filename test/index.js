@@ -24,7 +24,7 @@ test("cliProgressFooter", t => {
 	expectedOut += "sample 2\n";
 
 	cliProgressFooter.updateProgress(
-		`${ [1, 2, 3, 4].map(item => `# item ${ item }`).join("\n") }\n`
+		`${ [1, 2, 3, 4].map(item => `# item ${ item }`).join("\n") }`
 	);
 	expectedOut += `\n${ [1, 2, 3, 4].map(item => `# item ${ item }`).join("\n") }\n`;
 
@@ -34,7 +34,7 @@ test("cliProgressFooter", t => {
 	}\n`;
 
 	cliProgressFooter.updateProgress(
-		`${ [1, 2, 3, 4, 5].map(item => `# item ${ item }`).join("\n") }\n`
+		`${ [1, 2, 3, 4, 5].map(item => `# item ${ item }`).join("\n") }`
 	);
 	expectedOut += `${ repeat.call(`${ cliErase.line }${ cliMove.lines(-1) }`, 5) }\n${
 		[1, 2, 3, 4, 5].map(item => `# item ${ item }`).join("\n")
@@ -45,7 +45,7 @@ test("cliProgressFooter", t => {
 		[1, 2, 3, 4, 5].map(item => `# item ${ item }`).join("\n")
 	}\n`;
 
-	cliProgressFooter.updateProgress(`${ [1, 2].map(item => `# item ${ item }`).join("\n") }\n`);
+	cliProgressFooter.updateProgress(`${ [1, 2].map(item => `# item ${ item }`).join("\n") }`);
 	expectedOut += `${ repeat.call(`${ cliErase.line }${ cliMove.lines(-1) }`, 6) }\n${
 		[1, 2].map(item => `# item ${ item }`).join("\n")
 	}\n`;
@@ -67,7 +67,7 @@ test("cliProgressFooter", t => {
 		[1, 2].map(item => `# item ${ item }`).join("\n")
 	}\n`;
 
-	cliProgressFooter.updateProgress(`${ [1, 3].map(item => `# item ${ item }`).join("\n") }\n`);
+	cliProgressFooter.updateProgress(`${ [1, 3].map(item => `# item ${ item }`).join("\n") }`);
 	expectedOut += `${ repeat.call(`${ cliErase.line }${ cliMove.lines(-1) }`, 3) }\n${
 		[1, 3].map(item => `# item ${ item }`).join("\n")
 	}\n`;

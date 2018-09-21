@@ -73,21 +73,25 @@ class CliProgressFooter {
 			}
 			// Position at last out char
 			if (this._lastOutLineLength) {
-				this._writeOriginalStdout(`${ cliMove.right(this._lastOutLineLength) }`);
+				this._writeOriginalStdout(
+					`${ cliMove.lines(-1) }${ cliMove.right(this._lastOutLineLength) }`
+				);
 			}
 		}
 
 		// Write eventual new std content
 		if (data) {
-			this._writeOriginalStdout(data);
+			const lastNewLineIndex = data.lastIndexOf("\n");
+			if (lastNewLineIndex === -1) this._lastOutLineLength += strip(data).length;
+			this._lastOutLineLength = strip(data.slice(lastNewLineIndex + 1)).length;
+			if (this._lastOutLineLength) data += "\n";
+
 			if (this._progressOverflowLinesCount) {
 				this._progressOverflowLinesCount = Math.max(
 					this._progressOverflowLinesCount - count.call(data, "\n"), 0
 				);
 			}
-			const lastNewLineIndex = data.lastIndexOf("\n");
-			if (lastNewLineIndex === -1) this._lastOutLineLength += strip(data).length;
-			this._lastOutLineLength = strip(data.slice(lastNewLineIndex + 1)).length;
+			this._writeOriginalStdout(data);
 		}
 
 		if (!this._progressContent) return;

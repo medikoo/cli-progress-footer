@@ -47,6 +47,7 @@ class CliProgressFooter {
 		}
 	}
 	updateProgress(data) {
+		if (Array.isArray(data)) data = data.join("\n");
 		this._progressContent = `${ ensureString(data) }\n`;
 		this._repaint();
 		const newProgressLinesCount = count.call(this._progressContent, "\n") + 1;

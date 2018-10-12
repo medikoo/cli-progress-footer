@@ -3,7 +3,9 @@
 const isObject            = require("es5-ext/object/is-object")
     , count               = require("es5-ext/string/#/count")
     , ensureString        = require("es5-ext/object/validate-stringifiable-value")
+    , ensureValue         = require("es5-ext/object/valid-value")
     , d                   = require("d")
+    , autoBind            = require("d/auto-bind")
     , cliErase            = require("cli-color/erase")
     , cliMove             = require("cli-color/move")
     , strip               = require("cli-color/strip")
@@ -19,7 +21,12 @@ class CliProgressFooter {
 			_isStderrRedirected: d(false),
 			_progressLinesCount: d(0),
 			_progressOverflowLinesCount: d(0),
-			_lastOutLineLength: d(0)
+			_progressContent: d(""),
+			_lastOutLineLength: d(0),
+			_shouldAddProgressAnimationPrefix: d(false),
+			_progressAnimationPrefixFrames: d(["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]),
+			_progressAnimationPrefixFramesCurrentIndex: d(0),
+			_progressAnimationInterval: d(null)
 		});
 		this.overrideStd(options);
 	}
@@ -46,11 +53,60 @@ class CliProgressFooter {
 			this._isStderrRedirected = false;
 		}
 	}
-	updateProgress(data) {
-		if (Array.isArray(data)) data = data.join("\n");
-		this._progressContent = `${ ensureString(data) }\n`;
+	get progressAnimationPrefixFrames() { return this._progressAnimationPrefixFrames; }
+	set progressAnimationPrefixFrames(frames) {
+		frames = Array.from(frames, ensureString);
+		if (frames.length < 2) throw new TypeError("Expected at least two animation frames");
+		this._progressAnimationPrefixFrames = frames;
+		this._progressAnimationPrefixFramesCurrentIndex = 0;
+		this._rewriteProgressAnimationFrame();
+	}
+	get shouldAddProgressAnimationPrefix() { return this._shouldAddProgressAnimationPrefix; }
+	set shouldAddProgressAnimationPrefix(value) {
+		value = Boolean(ensureValue(value));
+		if (this._shouldAddProgressAnimationPrefix === value) return;
+		if (this._progressContent) {
+			const prefix = `${
+				this._progressAnimationPrefixFrames[this._progressAnimationPrefixFramesCurrentIndex]
+			} `;
+			let progressRows = this._progressContent.split("\n");
+			if (value) {
+				progressRows = progressRows.map(progressRow => progressRow && prefix + progressRow);
+			} else {
+				progressRows = progressRows.map(progressRow => progressRow.slice(prefix.length));
+			}
+			this._progressContent = progressRows.join("\n");
+			this._repaint();
+		}
+		this._shouldAddProgressAnimationPrefix = value;
+		if (value) {
+			this._progressAnimationInterval = setInterval(this._rewriteProgressAnimationFrame, 80);
+			if (this._progressAnimationInterval.unref) this._progressAnimationInterval.unref();
+		} else {
+			clearInterval(this._progressAnimationInterval);
+		}
+	}
+	updateProgress(progressRows) {
+		if (!Array.isArray(progressRows)) {
+			progressRows = progressRows ? progressRows.split("\n") : [];
+		}
+		if (progressRows.length) {
+			if (this._shouldAddProgressAnimationPrefix) {
+				const prefix = `${
+					this._progressAnimationPrefixFrames[
+						this._progressAnimationPrefixFramesCurrentIndex
+					]
+				} `;
+				progressRows = progressRows.map(progressRow => progressRow && prefix + progressRow);
+			}
+			this._progressContent = `${ progressRows.join("\n") }\n`;
+		} else {
+			this._progressContent = "";
+		}
 		this._repaint();
-		const newProgressLinesCount = count.call(this._progressContent, "\n") + 1;
+		const newProgressLinesCount = this._progressContent
+			? count.call(this._progressContent, "\n") + 1
+			: 0;
 		if (newProgressLinesCount !== this._progressLinesCount) {
 			this._progressOverflowLinesCount += this._progressLinesCount - newProgressLinesCount;
 			if (this._progressOverflowLinesCount < 0) this._progressOverflowLinesCount = 0;
@@ -102,5 +158,28 @@ class CliProgressFooter {
 		this._writeOriginalStdout(`\n${ this._progressContent }`);
 	}
 }
+
+Object.defineProperties(
+	CliProgressFooter.prototype,
+	autoBind({
+		_rewriteProgressAnimationFrame: d(function () {
+			if (!this._progressContent) return;
+			const oldPrefix = `${
+				this._progressAnimationPrefixFrames[this._progressAnimationPrefixFramesCurrentIndex]
+			} `;
+			this._progressAnimationPrefixFramesCurrentIndex =
+				(this._progressAnimationPrefixFramesCurrentIndex + 1) %
+				this._progressAnimationPrefixFrames.length;
+			const newPrefix = `${
+				this._progressAnimationPrefixFrames[this._progressAnimationPrefixFramesCurrentIndex]
+			} `;
+			this._progressContent = this._progressContent
+				.split("\n")
+				.map(progressRow => progressRow && newPrefix + progressRow.slice(oldPrefix.length))
+				.join("\n");
+			this._repaint();
+		})
+	})
+);
 
 module.exports = (options = defaultOptions) => new CliProgressFooter(options);

@@ -33,7 +33,7 @@ cliProgresssFooter.updateProgress("# processing 3\n# processing 4\n");
 
 By default both `stdout` and `stderr` output is automatically handled and ensured to appear above progress content
 
-#### Options
+### Options
 
 ##### overrideStdout `bool` _(default: `true`)_
 
@@ -50,6 +50,14 @@ When progress footer is in play, all output should be treated as one `std` strea
 any `stderr` output may break visible log output. Therefore by default all `stderr` content is redirected to `stdout`.
 
 If you wish to redirect `stderr` somewhere else with cli means, then it's best turn this function off (so `proces.stderr.write` is not overriden)
+
+#### Throbber animation
+
+Additionally each progress line may be automatically prefixed with throbber (frames customizable at `cliProgresssFooter.progressAnimationPrefixFrames`), for that apply following setting:
+
+```javascript
+cliProgressFooter.shouldAddProgressAnimationPrefix = true;
+```
 
 ### Tests
 

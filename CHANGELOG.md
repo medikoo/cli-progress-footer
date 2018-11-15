@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/medikoo/cli-progress-footer/compare/v1.0.0...v1.1.0) (2018-11-15)
+
+
+### Bug Fixes
+
+* default with windows supported chars on windows ([0490f8e](https://github.com/medikoo/cli-progress-footer/commit/0490f8e))
+
+
+### Features
+
+* support progress interval customization ([7ac4d5e](https://github.com/medikoo/cli-progress-footer/commit/7ac4d5e))
+
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2018-10-23)
 

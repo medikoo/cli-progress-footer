@@ -30,7 +30,7 @@ class CliProgressFooter {
 					: ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
 			),
 			_progressAnimationPrefixFramesCurrentIndex: d(0),
-			_progressAnimationInterval: d(null)
+			_progressAnimationIntervalId: d(null)
 		});
 		this.overrideStd(options);
 	}
@@ -84,10 +84,12 @@ class CliProgressFooter {
 		}
 		this._shouldAddProgressAnimationPrefix = value;
 		if (value) {
-			this._progressAnimationInterval = setInterval(this._rewriteProgressAnimationFrame, 80);
-			if (this._progressAnimationInterval.unref) this._progressAnimationInterval.unref();
+			this._progressAnimationIntervalId = setInterval(
+				this._rewriteProgressAnimationFrame, 80
+			);
+			if (this._progressAnimationIntervalId.unref) this._progressAnimationIntervalId.unref();
 		} else {
-			clearInterval(this._progressAnimationInterval);
+			clearInterval(this._progressAnimationIntervalId);
 		}
 	}
 	updateProgress(progressRows) {

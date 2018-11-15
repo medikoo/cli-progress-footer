@@ -4,6 +4,7 @@ const isObject            = require("es5-ext/object/is-object")
     , count               = require("es5-ext/string/#/count")
     , ensureString        = require("es5-ext/object/validate-stringifiable-value")
     , ensureValue         = require("es5-ext/object/valid-value")
+    , ensureInterval      = require("timers-ext/valid-timeout")
     , d                   = require("d")
     , autoBind            = require("d/auto-bind")
     , cliErase            = require("cli-color/erase")
@@ -12,7 +13,8 @@ const isObject            = require("es5-ext/object/is-object")
     , overrideStdoutWrite = require("process-utils/override-stdout-write")
     , overrideStderrWrite = require("process-utils/override-stderr-write");
 
-const defaultOptions = { overrideStdout: true, redirectStderr: true };
+const defaultOptions = { overrideStdout: true, redirectStderr: true }
+    , isWindows = process.platform === "win32";
 
 class CliProgressFooter {
 	constructor(options) {
@@ -25,10 +27,11 @@ class CliProgressFooter {
 			_lastOutLineLength: d(0),
 			_shouldAddProgressAnimationPrefix: d(false),
 			_progressAnimationPrefixFrames: d(
-				process.platform === "win32"
+				isWindows
 					? ["┤", "┘", "┴", "└", "├", "┌", "┬", "┐"]
 					: ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
 			),
+			_progressAnimationInterval: d(isWindows ? 100 : 80),
 			_progressAnimationPrefixFramesCurrentIndex: d(0),
 			_progressAnimationIntervalId: d(null)
 		});
@@ -64,6 +67,18 @@ class CliProgressFooter {
 		this._progressAnimationPrefixFrames = frames;
 		this._progressAnimationPrefixFramesCurrentIndex = 0;
 		this._rewriteProgressAnimationFrame();
+	}
+	get progressAnimationInterval() { return this._progressAnimationInterval; }
+	set progressAnimationInterval(interval) {
+		interval = ensureInterval(interval);
+		if (this._progressAnimationInterval === interval) return;
+		this._progressAnimationInterval = interval;
+		if (!this._shouldAddProgressAnimationPrefix) return;
+		clearInterval(this._progressAnimationIntervalId);
+		this._progressAnimationIntervalId = setInterval(
+			this._rewriteProgressAnimationFrame, interval
+		);
+		if (this._progressAnimationIntervalId.unref) this._progressAnimationIntervalId.unref();
 	}
 	get shouldAddProgressAnimationPrefix() { return this._shouldAddProgressAnimationPrefix; }
 	set shouldAddProgressAnimationPrefix(value) {

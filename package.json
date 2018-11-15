@@ -6,7 +6,8 @@
     "cli-color": "^1.4",
     "d": "1",
     "es5-ext": "^0.10.46",
-    "process-utils": "^2.0.1"
+    "process-utils": "^2.0.1",
+    "timers-ext": "^0.1.7"
   },
   "devDependencies": {
     "ansi-regex": "^4",

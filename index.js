@@ -24,7 +24,11 @@ class CliProgressFooter {
 			_progressContent: d(""),
 			_lastOutLineLength: d(0),
 			_shouldAddProgressAnimationPrefix: d(false),
-			_progressAnimationPrefixFrames: d(["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]),
+			_progressAnimationPrefixFrames: d(
+				process.platform === "win32"
+					? ["┤", "┘", "┴", "└", "├", "┌", "┬", "┐"]
+					: ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
+			),
 			_progressAnimationPrefixFramesCurrentIndex: d(0),
 			_progressAnimationInterval: d(null)
 		});

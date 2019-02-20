@@ -13,6 +13,7 @@
 		"ansi-regex": "^4",
 		"eslint": "^5.7",
 		"eslint-config-medikoo": "^1.43",
+		"git-list-updated": "^1.1.2",
 		"nyc": "^13.3.0",
 		"prettier-elastic": "^1.16.4",
 		"tape": "^4.9.1",
@@ -29,6 +30,8 @@
 		"coverage": "nyc --reporter=lcov --reporter=html --reporter=text-summary npm test",
 		"check-coverage": "npm run coverage && nyc check-coverage --statements 80 --function 80 --branches 80 --lines 80",
 		"lint": "eslint --ignore-path=.gitignore .",
+		"lint-updated": "pipe-git-updated --ext=js -- eslint --ignore-pattern '!*'",
+		"prettier-check-updated": "pipe-git-updated --ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier -c",
 		"prettify": "prettier --write --ignore-path .gitignore '**/*.{css,html,js,json,md,yaml,yml}'",
 		"test": "tape-index && node test.index.js"
 	},

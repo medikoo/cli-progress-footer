@@ -13,7 +13,7 @@
     "ansi-regex": "^4",
     "eslint": "^5.7",
     "eslint-config-medikoo": "^1.43",
-    "istanbul": "^0.4.5",
+    "nyc": "^13.3.0",
     "tape": "^4.9.1",
     "tape-index": "^2"
   },
@@ -25,8 +25,8 @@
     }
   },
   "scripts": {
-    "coverage": "tape-index && istanbul cover test.index.js",
-    "check-coverage": "npm run coverage && istanbul check-coverage --statements 80 --function 80 --branches 80 --lines 80",
+    "coverage": "nyc --reporter=lcov --reporter=html --reporter=text-summary npm test",
+    "check-coverage": "npm run coverage && nyc check-coverage --statements 80 --function 80 --branches 80 --lines 80",
     "lint": "eslint --ignore-path=.gitignore .",
     "test": "tape-index && node test.index.js"
   },

@@ -1,5 +1,5 @@
-/node_modules
-/package-lock.json
-npm-debug.log
-/test.index.js
 /coverage
+/node_modules
+npm-debug.log
+/package-lock.json
+/test.index.js

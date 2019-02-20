@@ -1,34 +1,34 @@
 {
-  "name": "cli-progress-footer",
-  "version": "1.1.0",
-  "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
-  "dependencies": {
-    "cli-color": "^1.4",
-    "d": "1",
-    "es5-ext": "^0.10.46",
-    "process-utils": "^2.0.1",
-    "timers-ext": "^0.1.7"
-  },
-  "devDependencies": {
-    "ansi-regex": "^4",
-    "eslint": "^5.7",
-    "eslint-config-medikoo": "^1.43",
-    "nyc": "^13.3.0",
-    "tape": "^4.9.1",
-    "tape-index": "^2"
-  },
-  "eslintConfig": {
-    "extends": "medikoo",
-    "root": true,
-    "env": {
-      "node": true
-    }
-  },
-  "scripts": {
-    "coverage": "nyc --reporter=lcov --reporter=html --reporter=text-summary npm test",
-    "check-coverage": "npm run coverage && nyc check-coverage --statements 80 --function 80 --branches 80 --lines 80",
-    "lint": "eslint --ignore-path=.gitignore .",
-    "test": "tape-index && node test.index.js"
-  },
-  "license": "ISC"
+	"name": "cli-progress-footer",
+	"version": "1.1.0",
+	"author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
+	"dependencies": {
+		"cli-color": "^1.4",
+		"d": "1",
+		"es5-ext": "^0.10.46",
+		"process-utils": "^2.0.1",
+		"timers-ext": "^0.1.7"
+	},
+	"devDependencies": {
+		"ansi-regex": "^4",
+		"eslint": "^5.7",
+		"eslint-config-medikoo": "^1.43",
+		"nyc": "^13.3.0",
+		"tape": "^4.9.1",
+		"tape-index": "^2"
+	},
+	"eslintConfig": {
+		"extends": "medikoo",
+		"root": true,
+		"env": {
+			"node": true
+		}
+	},
+	"scripts": {
+		"coverage": "nyc --reporter=lcov --reporter=html --reporter=text-summary npm test",
+		"check-coverage": "npm run coverage && nyc check-coverage --statements 80 --function 80 --branches 80 --lines 80",
+		"lint": "eslint --ignore-path=.gitignore .",
+		"test": "tape-index && node test.index.js"
+	},
+	"license": "ISC"
 }

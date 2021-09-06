@@ -11,7 +11,7 @@
 	},
 	"devDependencies": {
 		"ansi-regex": "^5.0.0",
-		"eslint": "^5.14.1",
+		"eslint": "^7.32.0",
 		"eslint-config-medikoo": "^2.1",
 		"essentials": "^1.0.0",
 		"git-list-updated": "^1.1.2",

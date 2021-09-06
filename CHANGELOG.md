@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/medikoo/cli-progress-footer/compare/v1.1.1...v2.0.0) (2021-09-06)
+
+### ⚠ BREAKING CHANGES
+
+- Node.js version 10 or later is required
+
+### Features
+
+- Support for multiline progress rows ([cd25917](https://github.com/medikoo/cli-progress-footer/commit/cd2591798815fd68423d2eec203017d1892fb807))
+
+### Maintenance Improvements
+
+- Drop support for Node.js versions below v10 ([022bc5a](https://github.com/medikoo/cli-progress-footer/commit/022bc5a5a58cfedc90fa7275a65814a1758d0a20))
+- Upgrade `ansi-regex` to v5 ([3ccc4ee](https://github.com/medikoo/cli-progress-footer/commit/3ccc4ee02f56648f713ae51cf87673c36002e9b0))
+- Upgrade `cli-color` to v2 ([50162aa](https://github.com/medikoo/cli-progress-footer/commit/50162aad8128395d49ac8fde1ca349c72e91afdf))
+- Upgrade `process-utils` to v4 ([09e81c0](https://github.com/medikoo/cli-progress-footer/commit/09e81c04a0a7e6dfdecd1f0980e74289d57e7652))
+
 ## [1.1.1](https://github.com/medikoo/cli-progress-footer/compare/v1.1.0...v1.1.1) (2019-02-21)
 
 ### Bug Fixes

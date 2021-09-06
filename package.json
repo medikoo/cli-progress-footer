@@ -6,7 +6,7 @@
 		"cli-color": "^2.0.0",
 		"d": "1",
 		"es5-ext": "^0.10.47",
-		"process-utils": "^2.0.1",
+		"process-utils": "^4.0.0",
 		"timers-ext": "^0.1.7"
 	},
 	"devDependencies": {

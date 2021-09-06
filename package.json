@@ -17,7 +17,7 @@
 		"git-list-updated": "^1.1.2",
 		"husky": "^4.3.8",
 		"lint-staged": "^11.1.2",
-		"nyc": "^13.3.0",
+		"nyc": "^15.1.0",
 		"prettier-elastic": "^1.16.4",
 		"tape": "^4.10.1",
 		"tape-index": "^3.0.1"

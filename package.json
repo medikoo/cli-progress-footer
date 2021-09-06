@@ -42,6 +42,19 @@
 			"node": true
 		}
 	},
+	"prettier": {
+		"printWidth": 100,
+		"tabWidth": 4,
+		"quoteProps": "preserve",
+		"overrides": [
+			{
+				"files": "*.md",
+				"options": {
+					"tabWidth": 2
+				}
+			}
+		]
+	},
 	"scripts": {
 		"coverage": "nyc --reporter=lcov --reporter=html --reporter=text-summary npm test",
 		"check-coverage": "npm run coverage && nyc check-coverage --statements 40 --function 40 --branches 40 --lines 40",

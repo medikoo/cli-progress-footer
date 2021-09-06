@@ -10,7 +10,7 @@
 		"timers-ext": "^0.1.7"
 	},
 	"devDependencies": {
-		"ansi-regex": "^4",
+		"ansi-regex": "^5.0.0",
 		"eslint": "^5.14.1",
 		"eslint-config-medikoo": "^2.1",
 		"essentials": "^1.0.0",

@@ -4,8 +4,8 @@
 	"author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
 	"dependencies": {
 		"cli-color": "^2.0.0",
-		"d": "1",
-		"es5-ext": "^0.10.47",
+		"d": "^1.0.1",
+		"es5-ext": "^0.10.53",
 		"process-utils": "^4.0.0",
 		"timers-ext": "^0.1.7",
 		"type": "^2.5.0"
@@ -14,14 +14,14 @@
 		"ansi-regex": "^5.0.0",
 		"eslint": "^7.32.0",
 		"eslint-config-medikoo": "^4.1.0",
-		"essentials": "^1.0.0",
-		"git-list-updated": "^1.1.2",
+		"essentials": "^1.1.1",
+		"git-list-updated": "^1.2.1",
 		"husky": "^4.3.8",
 		"lint-staged": "^11.1.2",
 		"nyc": "^15.1.0",
 		"prettier-elastic": "^2.2.1",
 		"tape": "^5.3.1",
-		"tape-index": "^3.0.1"
+		"tape-index": "^3.1.0"
 	},
 	"husky": {
 		"hooks": {

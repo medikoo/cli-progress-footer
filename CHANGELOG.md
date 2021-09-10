@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/medikoo/cli-progress-footer/compare/v2.0.0...v2.0.1) (2021-09-10)
+
+### Bug Fixes
+
+- Fix output updates in case of output wrapping ([1abb356](https://github.com/medikoo/cli-progress-footer/commit/1abb35634f7eba335126bfe88846eb78ec8dbb1a))
+- Apply std stream overrides only when displaying progress ([d7023b1](https://github.com/medikoo/cli-progress-footer/commit/d7023b1be3a7371ac72f3924356ea76b1ca783da))
+
+### Maintenance Improvements
+
+- Seclude `_repaint` method ([bd99cb0](https://github.com/medikoo/cli-progress-footer/commit/bd99cb032e710757258d18ef4aadc48c1e094624))
+
 ## [2.0.0](https://github.com/medikoo/cli-progress-footer/compare/v1.1.1...v2.0.0) (2021-09-06)
 
 ### ⚠ BREAKING CHANGES

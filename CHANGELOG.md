@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://github.com/medikoo/cli-progress-footer/compare/v2.0.1...v2.0.2) (2021-09-14)
+
+### Bug Fixes
+
+- Ensure proper handling of feed data that doesn't end with new line ([07678a3](https://github.com/medikoo/cli-progress-footer/commit/07678a38775b7231704eac12a5b4829c632ee9a9))
+- Fix internal string length calculation for rich unicode chars ([c41afab](https://github.com/medikoo/cli-progress-footer/commit/c41afab24d07aaa18ee285526765d2175fac3f89))
+- Fix last feed line handling when terminal wrapping occurs ([20e1941](https://github.com/medikoo/cli-progress-footer/commit/20e1941d27d8ff5256752f311b71896c376bb56d))
+
 ### [2.0.1](https://github.com/medikoo/cli-progress-footer/compare/v2.0.0...v2.0.1) (2021-09-10)
 
 ### Bug Fixes

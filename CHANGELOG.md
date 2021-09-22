@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/medikoo/cli-progress-footer/compare/v2.0.2...v2.1.0) (2021-09-22)
+
+### Features
+
+- Do not introduce line gap if previous feed line is already empty ([6c0ccca](https://github.com/medikoo/cli-progress-footer/commit/6c0ccca266714fc73b26147238f2955a31f4e1ed))
+
+### Bug Fixes
+
+- Ensure correct lines length calculation ([cf5b94e](https://github.com/medikoo/cli-progress-footer/commit/cf5b94e79dea5467cf20de894659744c0b2b7c3e))
+- Fix resolution of gap ([11fb97e](https://github.com/medikoo/cli-progress-footer/commit/11fb97ef04f72d5f93fd9ef8d53b87f818bcb0c8))
+
 ### [2.0.2](https://github.com/medikoo/cli-progress-footer/compare/v2.0.1...v2.0.2) (2021-09-14)
 
 ### Bug Fixes

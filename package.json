@@ -4,7 +4,7 @@
 	"author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
 	"repository": "medikoo/cli-progress-footer",
 	"dependencies": {
-		"cli-color": "^2.0.0",
+		"cli-color": "^2.0.1",
 		"d": "^1.0.1",
 		"es5-ext": "^0.10.53",
 		"mute-stream": "0.0.8",
@@ -15,15 +15,15 @@
 	"devDependencies": {
 		"ansi-regex": "^5.0.1",
 		"eslint": "^7.32.0",
-		"eslint-config-medikoo": "^4.1.0",
+		"eslint-config-medikoo": "^4.1.1",
 		"essentials": "^1.1.1",
 		"git-list-updated": "^1.2.1",
 		"husky": "^4.3.8",
-		"lint-staged": "^11.1.2",
+		"lint-staged": "^11.2.6",
 		"nyc": "^15.1.0",
 		"prettier-elastic": "^2.2.1",
-		"tape": "^5.3.1",
-		"tape-index": "^3.1.0"
+		"tape": "^5.3.2",
+		"tape-index": "^3.2.0"
 	},
 	"husky": {
 		"hooks": {

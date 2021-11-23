@@ -18,5 +18,6 @@ test("cliProgressFooter", t => {
 	const expectedOut = testWrite(cliProgressFooter);
 
 	t.equal(exposeAnsi(out), exposeAnsi(expectedOut));
+	cliProgressFooter.updateProgress();
 	t.end();
 });

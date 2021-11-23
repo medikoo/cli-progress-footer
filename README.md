@@ -51,6 +51,10 @@ any `stderr` output may break visible log output. Therefore by default all `stde
 
 If you wish to redirect `stderr` somewhere else with cli means, then it's best turn this function off (so `proces.stderr.write` is not overriden)
 
+##### discardStdin `bool` _(default: true)_
+
+Whether to mute stdin input (so it doesn't add to displayed progress output). In scope of that setting also cursor is hidden
+
 #### Throbber animation
 
 Additionally each progress line may be automatically prefixed with throbber (frames customizable at `cliProgresssFooter.progressAnimationPrefixFrames`), for that apply following setting:

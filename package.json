@@ -6,6 +6,7 @@
 		"cli-color": "^2.0.0",
 		"d": "^1.0.1",
 		"es5-ext": "^0.10.53",
+		"mute-stream": "0.0.8",
 		"process-utils": "^4.0.0",
 		"timers-ext": "^0.1.7",
 		"type": "^2.5.0"

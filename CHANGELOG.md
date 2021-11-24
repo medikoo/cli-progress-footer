@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/medikoo/cli-progress-footer/compare/v2.1.1...v2.2.0) (2021-11-24)
+
+### Features
+
+- `discardStdin` option (`true` by default) ([6082161](https://github.com/medikoo/cli-progress-footer/commit/6082161899cfbb836ff67b733e3c118f50c81abd))
+
 ### [2.1.1](https://github.com/medikoo/cli-progress-footer/compare/v2.1.0...v2.1.1) (2021-09-22)
 
 ### Bug Fixes

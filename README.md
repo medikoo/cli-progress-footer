@@ -4,7 +4,7 @@
 
 # cli-progress-footer
 
-## Keeps informative progress footer below ongoing logs
+## Allows to manage dynamic progress footer below ongoing regular std output stream
 
 Content agnostic. For reliable output all of process std output needs go through this utility. To ensure that by default `process.stdout.write` is overriden and `process.stderr` is redirected into `process.stdout` (with possibility to opt out from both).
 

@@ -1,7 +1,5 @@
-[![*nix build status][nix-build-image]][nix-build-url]
-[![Windows build status][win-build-image]][win-build-url]
+[![Build status][build-image]][build-url]
 [![Tests coverage][cov-image]][cov-url]
-![Transpilation status][transpilation-image]
 [![npm version][npm-image]][npm-url]
 
 # cli-progress-footer
@@ -69,12 +67,9 @@ cliProgressFooter.shouldAddProgressAnimationPrefix = true;
 npm test
 ```
 
-[nix-build-image]: https://semaphoreci.com/api/v1/medikoo-org/cli-progress-footer/branches/master/shields_badge.svg
-[nix-build-url]: https://semaphoreci.com/medikoo-org/cli-progress-footer
-[win-build-image]: https://ci.appveyor.com/api/projects/status/vd4sssfcobhbiwsj?svg=true
-[win-build-url]: https://ci.appveyor.com/project/medikoo/cli-progress-footer
+[build-image]: https://github.com/medikoo/cli-progress-footer/workflows/Integrate/badge.svg
+[build-url]: https://github.com/medikoo/cli-progress-footer/actions?query=workflow%3AIntegrate
 [cov-image]: https://img.shields.io/codecov/c/github/medikoo/cli-progress-footer.svg
 [cov-url]: https://codecov.io/gh/medikoo/cli-progress-footer
-[transpilation-image]: https://img.shields.io/badge/transpilation-free-brightgreen.svg
 [npm-image]: https://img.shields.io/npm/v/cli-progress-footer.svg
 [npm-url]: https://www.npmjs.com/package/cli-progress-footer

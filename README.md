@@ -42,14 +42,14 @@ You may opt out but then if any content is written to `process.stdout`, process 
 
 When opting out you may write regular log content via `cliProgressFooter.writeStdout(data)`
 
-##### redirectStderr `bool` _(default: true)_
+##### redirectStderr `bool` _(default: `true`)_
 
 When progress footer is in play, all output should be treated as one `std` stream. If it's not the case then
 any `stderr` output may break visible log output. Therefore by default all `stderr` content is redirected to `stdout`.
 
 If you wish to redirect `stderr` somewhere else with cli means, then it's best turn this function off (so `proces.stderr.write` is not overriden)
 
-##### discardStdin `bool` _(default: true)_
+##### discardStdin `bool` _(default: `true`)_
 
 Whether to mute stdin input (so it doesn't add to displayed progress output). In scope of that setting also cursor is hidden
 

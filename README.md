@@ -53,6 +53,14 @@ If you wish to redirect `stderr` somewhere else with cli means, then it's best t
 
 Whether to mute stdin input (so it doesn't add to displayed progress output). In scope of that setting also cursor is hidden
 
+##### workaroundChildProcess `bool` _(default: `true`)_
+
+Whether to hide a progress bar for a time being of child process runs with inherited `stdio`.
+
+Problem is that output of such processes cannot be controlled, and if happens will break the progress bar output.
+
+Internal workaround is to decorate `child_process` module functions, and react accordingly whenever problematic child process is created
+
 #### Throbber animation
 
 Additionally each progress line may be automatically prefixed with throbber (frames customizable at `cliProgresssFooter.progressAnimationPrefixFrames`), for that apply following setting:

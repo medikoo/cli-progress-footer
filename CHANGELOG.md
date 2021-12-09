@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/medikoo/cli-progress-footer/compare/v2.2.0...v2.3.0) (2021-12-09)
+
+### Features
+
+- Workaround child processes with inherited stdio ([101f46c](https://github.com/medikoo/cli-progress-footer/commit/101f46cac819af8f8f7d730ea7ae905d8a0edd0a))
+
+### Bug Fixes
+
+- Fix handling of input at `writeStdout` when progress in not active ([0b8bf3d](https://github.com/medikoo/cli-progress-footer/commit/0b8bf3d265933cadcae125931a3ce48062520435))
+
 ## [2.2.0](https://github.com/medikoo/cli-progress-footer/compare/v2.1.1...v2.2.0) (2021-11-24)
 
 ### Features

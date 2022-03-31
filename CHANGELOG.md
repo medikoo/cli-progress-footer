@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.3.1](https://github.com/medikoo/cli-progress-footer/compare/v2.3.0...v2.3.1) (2022-03-31)
+
+### Maintenance Improvements
+
+- Ensure to rely on latest version of `cli-color` ([4ff2b87](https://github.com/medikoo/cli-progress-footer/commit/4ff2b8791301e03f441340819076e255455cb08b))
+
 ## [2.3.0](https://github.com/medikoo/cli-progress-footer/compare/v2.2.0...v2.3.0) (2021-12-09)
 
 ### Features

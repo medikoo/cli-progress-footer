@@ -1,6 +1,6 @@
 {
 	"name": "cli-progress-footer",
-	"version": "2.3.0",
+	"version": "2.3.1",
 	"author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
 	"repository": "medikoo/cli-progress-footer",
 	"dependencies": {

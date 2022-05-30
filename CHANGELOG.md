@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.3.2](https://github.com/medikoo/cli-progress-footer/compare/v2.3.1...v2.3.2) (2022-05-30)
+
+### Bug Fixes
+
+- Improve recognition of inherited child processes ([ef76603](https://github.com/medikoo/cli-progress-footer/commit/ef76603eddf0ec1dd9b8ea35166892cb492a7e0d))
+
 ### [2.3.1](https://github.com/medikoo/cli-progress-footer/compare/v2.3.0...v2.3.1) (2022-03-31)
 
 ### Maintenance Improvements

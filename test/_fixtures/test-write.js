@@ -14,7 +14,7 @@ module.exports = cliProgressFooter => {
 	expectedOut += "sample 2\n";
 
 	cliProgressFooter.updateProgress(
-		`${ [1, 2, 3, 4].map(item => `# item ${ item }`).join("\n") }`
+		`${ [1, 2, 3, 4].map(item => `# item ${ item }`).join("\r") }`
 	);
 	expectedOut += `\n${ [1, 2, 3, 4].map(item => `# item ${ item }`).join("\n") }\n`;
 

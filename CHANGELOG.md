@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.3.3](https://github.com/medikoo/cli-progress-footer/compare/v2.3.2...v2.3.3) (2024-02-29)
+
+### Bug Fixes
+
+- Ensure `\r` chars do not break progress output ([888af14](https://github.com/medikoo/cli-progress-footer/commit/888af14a84f57e44756c960a16aa08e636920e09))
+
+### Maintenance Improvements
+
+- Exclude `updateProgress` method ([48bc757](https://github.com/medikoo/cli-progress-footer/commit/48bc757353cd7ea386c7365003de510e3e183850))
+
 ### [2.3.2](https://github.com/medikoo/cli-progress-footer/compare/v2.3.1...v2.3.2) (2022-05-30)
 
 ### Bug Fixes
